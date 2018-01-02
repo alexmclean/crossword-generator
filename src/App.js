@@ -68,6 +68,7 @@ class App extends Component {
         board[i][j].partOf = [];
         // skip blank spots
         if(board[i][j].value === null){
+          board[i][j].clueNum = null;
           continue;
         }
 
@@ -98,6 +99,8 @@ class App extends Component {
         if(isClueStart) {
           board[i][j].clueNum = clueCurrentTotal;
           clueCurrentTotal += 1;
+        } else {
+          board[i][j].clueNum = null;
         }
       }
     }
